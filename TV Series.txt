@@ -1,0 +1,9 @@
+-Title,year,genre,price,director,quantity,episodes,star
+Narcos,2015,Crime,50,Carlo Bernard,10,2,Wagner Moura
+Game of Thrones,2011,Adventure,80,David Benioff,20,6,Emilia Clarke
+Suits,2011,Comedy,50,Aaron Korsh,20,6,Gabriel Macht
+Shameless,2011,Comedy,50,John Wells,20,7,Emmy Rossum
+The Walking Dead,2010,Horror,50,Frank Darabont,20,6,Andrew Lincoin
+American Horror Story,2011,Horror,50,Brad Falchuk,20,6,Lady Gaga
+Westworld,2016,Thriller,30,Jonathan Nolan,20,1,Anthony Hopkins
+Atlanta,2016,Comedy,30,Donald Glover,20,1,Donald Glover

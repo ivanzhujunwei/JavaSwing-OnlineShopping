@@ -1,0 +1,8 @@
+-title,year,genre,price,director,quantity,numberOfFilms
+The Shawshank Redemption,1994,Drama,30,Frank Darabont,100,1
+The Godfather,1972,Crime,20,Francis Ford Coppola,80,3
+The Dark Knight,2008,Action,60,Christopher Nolan,60,1
+12 Angry Men,1957,Action,10,Sidney Lumet,120,1
+Schindler's List,1993,Drama,20,Steven Spielberg,110,1
+The Lord of the Rings,2003,Fantasy,60,Peter Jackson,99,3
+Fight Club,1999,Drama,40,David Fincher,88,1
