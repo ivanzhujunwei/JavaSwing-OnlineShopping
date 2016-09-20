@@ -2,7 +2,10 @@ package source;
 
 import beans.Product;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -10,40 +13,34 @@ import beans.Cart;
 import beans.CartItem;
 import beans.Customer;
 import beans.Game;
+import beans.Movie;
 import beans.ProductType;
 import io.FileHandler;
 
 public class DummyModel implements Model
 {
-
+	// product name must not the same!!!
     ArrayList<Product> productList = new ArrayList<Product>();
-//    HashMap<String, String> passwords = new HashMap<>();
+    HashMap<String, String> passwords = new HashMap<>();
     HashMap<String, Customer> customerList = new HashMap<>();
 
     public DummyModel()
     {
         loadData();
-//        customerList.put("admin", new Customer("john", "900 dandenong rd", "123", "456"));
-
-//        for (int i = 0; i < 3; i++)
-//        {
-//            Product birb = new Product("Item #" + i) {};
-//            birb.setProperty("price", "Price ($)", 100f);
-//            productList.add(birb);
-//        }
     }
 
     private void loadData()
     {
+    	// load product data
+        loadProductData();
         // load customer data
         loadCusteomerData();
-        // load product data
-        loadProductData();
+        
     }
 
     private void loadGameData()
     {
-        String gameData = FileHandler.readFromFile(FileHandler.GAME_DATA);
+        String gameData = FileHandler.readFromFile(FileHandler.GAME_FILE);
         String[] gameArray = gameData.split(FileHandler.SPLIT_CEMI);
         for (int i = 0; i < gameArray.length; i++)
         {
@@ -59,14 +56,50 @@ public class DummyModel implements Model
         }
     }
 
+    /***
+     * Load movie data from file
+     * File format: name,year,genre,price,director,quantity,numberOfFilms
+     */
+    private void loadMovieData(){
+    	 String movieData = FileHandler.readFromFile(FileHandler.MOVIE_FILE);
+         String[] movieArray = movieData.split(FileHandler.SPLIT_CEMI);
+         for (int i = 0; i < movieArray.length; i++)
+         {
+             String[] movie = movieArray[i].split(FileHandler.SPLIT_COMMA);
+             String name = movie[0];
+             int year = Integer.parseInt(movie[1]);
+             String genre = movie[2];
+             float price = Float.parseFloat(movie[3]);
+             String director = movie[4];
+             int quantity = Integer.parseInt(movie[5]);
+             int numberOfFilms = Integer.parseInt(movie[6]);
+             Movie c = new Movie(ProductType.MOVIE, name, price, year, genre, director, quantity, numberOfFilms);
+             productList.add(c);
+         }
+    }
+    /***
+     * load product data
+     */
     private void loadProductData()
     {
         loadGameData();
+        loadMovieData();
     }
 
+    /***
+     * Load customer data
+     */
     private void loadCusteomerData()
     {
-        String customerData = FileHandler.readFromFile(FileHandler.CUSTOMER_DATA);
+        loadCustomerDetail();
+        loadCustomerCart();
+    }
+
+    /***
+     * Load customer personal information
+     */
+    private void loadCustomerDetail(){
+    	String customerData = FileHandler.readFromFile(FileHandler.CUSTOMER_DATA);
         String[] customerArray = customerData.split(FileHandler.SPLIT_CEMI);
         for (int i = 0; i < customerArray.length; i++)
         {
@@ -83,8 +116,42 @@ public class DummyModel implements Model
             c.setSecrQues(securityQuestion);
             c.setAnswer(securityAnswer);
             customerList.put(username, c);
-            System.out.println(c.getUsername());
+            passwords.put(username, password);
         }
+    }
+    
+    /***
+     * Load customer cart information
+     */
+    private void loadCustomerCart(){
+    	String cartData = FileHandler.readFromFile(FileHandler.CART_FILE);
+    	 String[] cartArray = cartData.split(FileHandler.SPLIT_CEMI);
+         for (int i = 0; i < cartArray.length; i++)
+         {
+             String[] cartOfCustomer = cartArray[i].split(FileHandler.SPLIT_COMMA);
+             String userId = cartOfCustomer[0];
+             Cart cart = customerList.get(userId).getCart();
+             for (int j = 1;j<cartOfCustomer.length; j = j+2){
+            	 Product p = getProductByName(cartOfCustomer[j]);
+            	 int productQuantity = Integer.parseInt(cartOfCustomer[j+1]);
+            	 CartItem ct = new CartItem(p,productQuantity);
+            	 cart.add(ct);
+             }
+         }
+    }
+    
+    /***
+     * Return a product by its name
+     * @param name product name
+     * @return product
+     */
+    private Product getProductByName (String name){
+    	for(Product p : productList){
+    		if (p.getName().equals(name)){
+    			return p;
+    		}
+    	}
+    	return null;
     }
 
     @Override
@@ -92,6 +159,8 @@ public class DummyModel implements Model
     {
         return productList;
     }
+    
+    
 
     @Override
     public boolean login(String username, String password)
@@ -106,12 +175,12 @@ public class DummyModel implements Model
     @Override
     public boolean signup(String username, String password)
     {
-//        if (passwords.containsKey(username))
-//        {
-//            return false;
-//        }
-//        passwords.put(username, password);
-//        customerList.put(username, new Customer(username, "", "", ""));
+        if (passwords.containsKey(username))
+        {
+            return false;
+        }
+        passwords.put(username, password);
+        customerList.put(username, new Customer(username, "", "", ""));
         return true;
     }
 
@@ -168,8 +237,17 @@ public class DummyModel implements Model
      * Save order data into file
      */
     public void saveOrderData(String currentUserID, Cart cart){
+    	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    	Date date = new Date();
     	// order file data format
-    	// currentUserID, product
+    	// currentUserID^time^productName^^productQuantity^^^productName^^productQuantity^^^
+    	String orderData = currentUserID + FileHandler.SPLIT_COMMA + dateFormat.format(date) + FileHandler.SPLIT_COMMA;
+    	for(CartItem ct: cart.getList()){
+    		// different product and its quantity is separated by "^^^"
+    		orderData += ct.toString() + FileHandler.SPLIT_COMMA;
+    	}
+    	orderData += "\n";
+    	FileHandler.appendToFile(orderData, FileHandler.ORDER_FILE);
     }
     
     /*
@@ -200,11 +278,16 @@ public class DummyModel implements Model
 				break;
    			}
    		}
-   		FileHandler.writeToFile(gameData,FileHandler.GAME_DATA);
+   		FileHandler.writeToFile(gameData,FileHandler.GAME_FILE);
    		// TODO: not implement other products now
-//   		FileHandler.writeToFile(movieData,FileHandler.MOVIE_DATA);
+   		FileHandler.writeToFile(movieData,FileHandler.MOVIE_FILE);
 //   		FileHandler.writeToFile(TVData,FileHandler.TV_DATA);
 //   		FileHandler.writeToFile(musicData,FileHandler.MUSIC_DATA);
    	}
+
+	@Override
+	public HashMap<String, Customer> getCustomerList() {
+		return customerList;
+	}
 
 }

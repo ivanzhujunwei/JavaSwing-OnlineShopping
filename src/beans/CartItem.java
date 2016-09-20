@@ -1,5 +1,7 @@
 package beans;
 
+import io.FileHandler;
+
 
 /**
  * <pre>
@@ -23,9 +25,9 @@ public class CartItem {
 	 * The amount of the product that this CartItem represents
 	 * </pre>
 	 */
-	public float quantity;
+	public int quantity;
 
-	public CartItem(Product product, float quantity) {
+	public CartItem(Product product, int quantity) {
 		this.product = product;
 		this.quantity = quantity;
 	}
@@ -49,4 +51,9 @@ public class CartItem {
 		this.quantity += quantity;
 	}
 	
+	@Override
+	public String toString(){
+		// "^" can not be set in a product's name
+		return this.product.getName() + FileHandler.SPLIT_COMMA + this.quantity;
+	}
 }

@@ -9,6 +9,7 @@ package io;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -22,12 +23,13 @@ public class FileHandler
 
     public static final String CUSTOMER_DATA = "Customer.txt";
     
-    public static final String GAME_DATA = "Game.txt";
-    public static final String MUSIC_DATA = "Music.txt";
-    public static final String TV_DATA = "TV Series.txt";
-    public static final String MOVIE_DATA = "Movie.txt";
+    public static final String GAME_FILE = "Game.txt";
+    public static final String MUSIC_FILE = "Music.txt";
+    public static final String TV_FILE = "TV Series.txt";
+    public static final String MOVIE_FILE = "Movie.txt";
     
-    public static final String FILE_BORROWERLIST = "borrowers.txt";
+    public static final String ORDER_FILE = "order.txt";
+    public static final String CART_FILE = "cart.txt";
     public static final String SPLIT_CEMI = ";";
     public static final String SPLIT_COMMA = ",";
 
@@ -63,7 +65,7 @@ public class FileHandler
 
     /**
      * *
-     * write borrowers' information to the file
+     * write data to overwrite file
      *
      * @param saveData the data which needs to be saved
      * @param filePath the file which will write
@@ -79,6 +81,26 @@ public class FileHandler
         {
             System.out.println("Sorry, fail to save borrowers' data!");
         }
+    }
+    
+    /**
+     * *
+     * append data to file
+     *
+     * @param saveData the data which needs to be saved
+     * @param filePath the file which will write
+     */
+    public static void appendToFile(String saveData, String filePath){
+    	try
+    	{
+    	    FileWriter fw = new FileWriter(filePath,true); //the true will append the new data
+    	    fw.write(saveData);//appends the string to the file
+    	    fw.close();
+    	}
+    	catch(IOException ioe)
+    	{
+    	    System.err.println("IOException: " + ioe.getMessage());
+    	}
     }
     
     private void exitLibrary()
