@@ -21,7 +21,12 @@ public class FileHandler
 {
 
     public static final String CUSTOMER_DATA = "Customer.txt";
+    
     public static final String GAME_DATA = "Game.txt";
+    public static final String MUSIC_DATA = "Music.txt";
+    public static final String TV_DATA = "TV.txt";
+    public static final String MOVIE_DATA = "Movie.txt";
+    
     public static final String FILE_BORROWERLIST = "borrowers.txt";
     public static final String SPLIT_CEMI = ";";
     public static final String SPLIT_COMMA = ",";
@@ -60,13 +65,14 @@ public class FileHandler
      * *
      * write borrowers' information to the file
      *
-     * @param saveData
+     * @param saveData the data which needs to be saved
+     * @param filePath the file which will write
      */
-    public static void writeToFile(String saveData)
+    public static void writeToFile(String saveData, String filePath)
     {
         try
         {
-            PrintWriter outputFile = new PrintWriter(FILE_BORROWERLIST);
+            PrintWriter outputFile = new PrintWriter(filePath);
             outputFile.println(saveData);
             outputFile.close();
         } catch (IOException e)

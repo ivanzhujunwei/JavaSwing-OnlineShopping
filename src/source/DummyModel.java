@@ -143,7 +143,7 @@ public class DummyModel implements Model
     }
 
     @Override
-    public boolean processOrder(String currentUserID, Cart cart)
+	public boolean processOrder(String currentUserID, Cart cart)
     {
     	// TODO
     	// Check if the quantity is enough
@@ -153,13 +153,42 @@ public class DummyModel implements Model
     		if (productQuantity < ct.quantity){
     			return false;
     		}
+    		// Update the quantity of the product
     		int currentProductQuantity = (int) (productQuantity - ct.quantity);
     		ct.product.setQuantity(currentProductQuantity);
-    		
-    		
     	}
-    	// Update the quantity of the product
+    	// save product
+    	saveProductData();
         return true;
     }
+    
+    public void saveProductData()
+   	{
+    	String gameData = "";
+    	String movieData = "";
+    	String TVData = "";
+    	String musicData = "";
+   		for (Product p :productList)
+   		{
+   			switch(p.getType()){
+   			case GAME:
+   				gameData += p.toString() + "\n";
+   				break;
+   			case MUSIC:
+   				musicData += p.toString() + "\n";
+   				break;
+   			case MOVIE:
+   				movieData += p.toString() + "\n";
+   				break;
+			default:
+				break;
+   			}
+   		}
+   		FileHandler.writeToFile(gameData,FileHandler.GAME_DATA);
+   		// TODO: not implement other products now
+//   		FileHandler.writeToFile(movieData,FileHandler.MOVIE_DATA);
+//   		FileHandler.writeToFile(TVData,FileHandler.TV_DATA);
+//   		FileHandler.writeToFile(musicData,FileHandler.MUSIC_DATA);
+   	}
 
 }

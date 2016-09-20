@@ -1,5 +1,7 @@
 package beans;
 
+import io.FileHandler;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -67,5 +69,14 @@ public class Game extends Product{
         this.quantity = quantity;
     }
 
+    @Override
+	public String toString() {
+		return this.getName() + FileHandler.SPLIT_COMMA + 
+				this.issueYear + FileHandler.SPLIT_COMMA + 
+				this.platform +FileHandler.SPLIT_COMMA + 
+				this.getPrice()	+ FileHandler.SPLIT_COMMA + 
+				publisher + FileHandler.SPLIT_COMMA + 
+				this.getQuantity();
+	}
     
 }
