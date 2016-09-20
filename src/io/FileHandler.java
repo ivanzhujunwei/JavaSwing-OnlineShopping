@@ -24,7 +24,7 @@ public class FileHandler
     
     public static final String GAME_DATA = "Game.txt";
     public static final String MUSIC_DATA = "Music.txt";
-    public static final String TV_DATA = "TV.txt";
+    public static final String TV_DATA = "TV Series.txt";
     public static final String MOVIE_DATA = "Movie.txt";
     
     public static final String FILE_BORROWERLIST = "borrowers.txt";

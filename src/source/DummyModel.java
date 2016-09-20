@@ -162,8 +162,12 @@ public class DummyModel implements Model
         return true;
     }
     
+    /***
+     * Save product data into file
+     */
     public void saveProductData()
    	{
+    	// initialize different data which needs to be stored in file
     	String gameData = "";
     	String movieData = "";
     	String TVData = "";
@@ -180,6 +184,8 @@ public class DummyModel implements Model
    			case MOVIE:
    				movieData += p.toString() + "\n";
    				break;
+   			case TV:
+   				TVData += p.toString() + "\n";
 			default:
 				break;
    			}
