@@ -165,6 +165,7 @@ public class DummyModel implements Model
     }
     
     /***
+<<<<<<< HEAD
      * Save order data into file
      */
     public void saveOrderData(String currentUserID, Cart cart){
@@ -172,8 +173,13 @@ public class DummyModel implements Model
     	// currentUserID, product
     }
     
+=======
+     * Save product data into file
+     */
+>>>>>>> master
     public void saveProductData()
    	{
+    	// initialize different data which needs to be stored in file
     	String gameData = "";
     	String movieData = "";
     	String TVData = "";
@@ -190,6 +196,8 @@ public class DummyModel implements Model
    			case MOVIE:
    				movieData += p.toString() + "\n";
    				break;
+   			case TV:
+   				TVData += p.toString() + "\n";
 			default:
 				break;
    			}
