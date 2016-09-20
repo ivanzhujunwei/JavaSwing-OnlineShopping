@@ -165,7 +165,6 @@ public class DummyModel implements Model
     }
     
     /***
-<<<<<<< HEAD
      * Save order data into file
      */
     public void saveOrderData(String currentUserID, Cart cart){
@@ -173,10 +172,9 @@ public class DummyModel implements Model
     	// currentUserID, product
     }
     
-=======
+    /*
      * Save product data into file
      */
->>>>>>> master
     public void saveProductData()
    	{
     	// initialize different data which needs to be stored in file
