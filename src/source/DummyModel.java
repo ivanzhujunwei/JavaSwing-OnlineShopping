@@ -159,10 +159,20 @@ public class DummyModel implements Model
     	}
     	// save product
     	saveProductData();
+    	// save order
+    	saveOrderData(currentUserID, cart);
         return true;
     }
     
     /***
+     * Save order data into file
+     */
+    public void saveOrderData(String currentUserID, Cart cart){
+    	// order file data format
+    	// currentUserID, product
+    }
+    
+    /*
      * Save product data into file
      */
     public void saveProductData()
