@@ -31,6 +31,7 @@ public class CartView extends View {
 	public CartView() {
 
 		setLayout(new BorderLayout(0, 0));
+		//test
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
