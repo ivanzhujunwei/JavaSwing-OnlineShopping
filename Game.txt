@@ -5,3 +5,4 @@ Call of Duty,2007,PlayStation3,19.9,Activision,100
 NBA 2K17,2016,PlayStaion4,99.5,2K Sports,100
 World of Warcraft,2016,PC,69.95,Blizzard,100
 Overwatch Orgins Edition,2016,PC,67,Blizzard,100
+Overwatch Orgins Edition,2016,PC,67,Blizzard,100
