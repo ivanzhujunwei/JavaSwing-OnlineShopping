@@ -1,0 +1,8 @@
+jn319^Pokemon Sun^^3.0^^^Counter-strike^^3.0^^^PES2017^^2.0^^^Call of Duty^^1.0^^^NBA 2K17^^1.0^^^World of Warcraft^^1.0^^^
+jn319^Pokemon Sun^^1.0^^^Counter-strike^^1.0^^^
+jn319^2016/09/20 22:57:51Pokemon Sun^^1.0^^^Counter-strike^^1.0^^^PES2017^^1.0^^^Call of Duty^^1.0^^^
+jn319;2016/09/20 23:00:16;Pokemon Sun^^1.0;Counter-strike^^1.0;PES2017^^1.0;Call of Duty^^1.0;NBA 2K17^^1.0;
+jn319,2016/09/21 00:57:05,Counter-strike,3,PES2017,5,
+jn319,2016/09/21 00:58:10,World of Warcraft,5,
+jn319,2016/09/21 01:28:37,Counter-strike,3,PES2017,5,The Dark Knight,1,Overwatch Orgins Edition,1,The Godfather,1,Schindler's List,3,
+jn319,2016/09/21 01:35:07,Counter-strike,4,PES2017,5,Pokemon Sun,1,The Lord of the Rings,1,Schindler's List,1,The Godfather,1,The Dark Knight,1,

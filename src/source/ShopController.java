@@ -2,17 +2,21 @@ package source;
 
 import gui.LoginView;
 import beans.Cart;
+import beans.CartItem;
 import beans.Product;
 import gui.CartView;
 import gui.ConfirmDialog;
 import gui.ProductListView;
 import gui.View;
 import beans.Customer;
+import io.FileHandler;
 
 import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -270,7 +274,7 @@ public class ShopController {
 	 * @param p The product
 	 * @param quantity The quantity to add
 	 */
-	public void addToCart(Product p, float quantity){
+	public void addToCart(Product p, int quantity){
 		getCurrentCustomerDetails().getCart().add(p, quantity);
 //		getCurrentCustomerDetails();
 	}
@@ -338,6 +342,26 @@ public class ShopController {
 			getCurrentCustomerDetails().getCart().clear();
 			this.showCartView();
 		}
+	}
+	
+	/***
+	 * Store all customers' cart data into file
+	 */
+	public void storeCartData(){
+		String cartData = "";
+		for(Entry<String, Customer> entry : getBackend().getCustomerList().entrySet()) {
+		        // Retrieve each customer
+		        Customer customer = entry.getValue();
+		        cartData += entry.getKey();// userId
+		        // Get customer's cart 
+		        Cart cart = customer.getCart();
+		        // Get itemList in cart
+		        for (CartItem ct: cart.getList()){
+		        	cartData += FileHandler.SPLIT_COMMA + ct.toString();
+		        }
+		        cartData += "\n";
+		    }
+		FileHandler.writeToFile(cartData, FileHandler.CART_FILE);
 	}
 	
 }

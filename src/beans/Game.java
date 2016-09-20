@@ -17,15 +17,15 @@ public class Game extends Product{
     private int issueYear;
     private String platform;
     private String publisher;
-    private int quantity;
+//    private int quantity;
             
     public Game(ProductType type, String name,int issueYear,String platform, float price,String publisher,int quantity)
     {
-        super(name,price,type);
+        super(name,price,quantity,type);
         this.platform = platform;
         this.issueYear  = issueYear;
         this.publisher = publisher;
-        this.quantity = quantity;
+//        this.quantity = quantity;
     }
 
     public int getIssueYear()
@@ -59,15 +59,15 @@ public class Game extends Product{
         this.publisher = publisher;
     }
 
-    public int getQuantity()
-    {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity)
-    {
-        this.quantity = quantity;
-    }
+//    public int getQuantity()
+//    {
+//        return quantity;
+//    }
+//
+//    public void setQuantity(int quantity)
+//    {
+//        this.quantity = quantity;
+//    }
 
     @Override
 	public String toString() {

@@ -19,7 +19,7 @@ public class Cart {
 	 * @param p The product to add
 	 * @param quantity The quantity of the product to add
 	 */
-	public void add(Product p, float quantity){
+	public void add(Product p, int quantity){
 		for(CartItem ci : items){
 			if(ci.product.equals(p)){
 				ci.quantity += quantity;

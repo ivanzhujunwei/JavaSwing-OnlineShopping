@@ -37,10 +37,11 @@ public abstract class Product {
 	 * </pre>
 	 * @param name The name of the product
 	 */
-	public Product(String name,float price, ProductType type){
+	public Product(String name,float price, int quantity, ProductType type){
 		setName(name);
 		setPrice(price);
 		setType(type);
+		setQuantity(quantity);
 		this.setProperty("price", "Price ($)", price);
 	}
 	

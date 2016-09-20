@@ -1,12 +1,16 @@
 package gui;
 
 
+import io.FileHandler;
+
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -14,9 +18,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
-import beans.Game;
-import beans.Product;
 import source.ProductThumbnail;
+import beans.Cart;
+import beans.CartItem;
+import beans.Customer;
+import beans.Product;
 
 public class ProductListView extends View {
 	
@@ -58,26 +64,11 @@ public class ProductListView extends View {
 //				getController().showLogout();
 				int dialogResult = JOptionPane.showConfirmDialog (null, "Do you want to logout?","Confirm", 2);
 				if(dialogResult == JOptionPane.YES_OPTION){
-					// save data
-					// cart data
-					// product data
-					List<Product> list = getController().getBackend().getProducts();
-					String saveData = "";
-//					for (Product product : list)
-//					{
-//						if (product instanceof Game){
-//							saveData+=
-//						}
-//						ArrayList<Book> bookList = borrower.getBookList();
-//						saveData += product.get
-//						for (Book book : bookList)
-//							saveData += FileHandle.SPLIT_COMMA + book.toString();
-//						saveData += "\n";
-//					}
-//					FileHandle.writeToFile(saveData);
-					System.out.println("You have exited, thank you!");
-					System.exit(0);
+					// save cart data
+					getController().storeCartData();
 					// redirect to log in view
+					getController().getWindow().dispose();
+					getController().init();
 				}
 			}
 		});

@@ -4,6 +4,7 @@ import beans.Cart;
 import beans.Product;
 import beans.Customer;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -118,4 +119,6 @@ public interface Model {
 	 * @return True if the order was successful, false otherwise.
 	 */
 	public boolean processOrder(String currentUserID, Cart cart);
+	
+	public HashMap<String, Customer> getCustomerList();
 }
