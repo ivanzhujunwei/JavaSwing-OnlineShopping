@@ -1,4 +1,5 @@
+#0 Create product subclass bean (music)
 #1 read from the file (in DummyModel.java)
 #2 customize the constructor in its own java bean file
-#3 override the "toString" function in jave bean(product) file
+#3 override the "toString" function in jave bean(music) file
 #4 update the product file after creating an order in (DummyModel.java)

@@ -15,6 +15,7 @@ import beans.Customer;
 import beans.Game;
 import beans.Movie;
 import beans.ProductType;
+import beans.TV;
 import io.FileHandler;
 
 public class DummyModel implements Model
@@ -77,6 +78,30 @@ public class DummyModel implements Model
              productList.add(c);
          }
     }
+    
+    /***
+     * load TV data
+     */
+    private void loadTVData(){
+    	String TVData = FileHandler.readFromFile(FileHandler.TV_FILE);
+        String[] TVArray = TVData.split(FileHandler.SPLIT_CEMI);
+        for (int i = 0; i < TVArray.length; i++)
+        {
+            String[] tv = TVArray[i].split(FileHandler.SPLIT_COMMA);
+            String name = tv[0];
+            int year = Integer.parseInt(tv[1]);
+            String genre = tv[2];
+            float price = Float.parseFloat(tv[3]);
+            String director = tv[4];
+            int quantity = Integer.parseInt(tv[5]);
+            int episodes = Integer.parseInt(tv[6]);
+            String star = tv[7];
+            //ProductType type, String name, float price, int year, String genre, String director, int quantity, int episodes, String star
+            TV tvObj = new TV(ProductType.TV, name, price, year, genre, director, quantity, episodes, star);
+            productList.add(tvObj);
+        }
+    }
+    
     /***
      * load product data
      */
@@ -84,6 +109,7 @@ public class DummyModel implements Model
     {
         loadGameData();
         loadMovieData();
+        loadTVData();
     }
 
     /***
@@ -214,7 +240,6 @@ public class DummyModel implements Model
     @Override
 	public boolean processOrder(String currentUserID, Cart cart)
     {
-    	// TODO
     	// Check if the quantity is enough
     	for (CartItem ct: cart.getList()){
     		// if product quantity is not enough, not processing
@@ -279,10 +304,10 @@ public class DummyModel implements Model
    			}
    		}
    		FileHandler.writeToFile(gameData,FileHandler.GAME_FILE);
-   		// TODO: not implement other products now
    		FileHandler.writeToFile(movieData,FileHandler.MOVIE_FILE);
-//   		FileHandler.writeToFile(TVData,FileHandler.TV_DATA);
-//   		FileHandler.writeToFile(musicData,FileHandler.MUSIC_DATA);
+   		FileHandler.writeToFile(TVData,FileHandler.TV_FILE);
+   		// TODO: comment now because MUSIC file has not been read yet
+//   		FileHandler.writeToFile(musicData,FileHandler.MUSIC_FILE);
    	}
 
 	@Override

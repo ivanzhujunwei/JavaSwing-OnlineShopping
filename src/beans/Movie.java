@@ -61,8 +61,9 @@ public class Movie extends Product{
 					this.year + FileHandler.SPLIT_COMMA + 
 					this.genre +FileHandler.SPLIT_COMMA + 
 					this.getPrice()	+ FileHandler.SPLIT_COMMA + 
-					director + FileHandler.SPLIT_COMMA + 
-					this.getQuantity();
+					this.director + FileHandler.SPLIT_COMMA + 
+					this.getQuantity() + FileHandler.SPLIT_COMMA +
+					this.numberOfFilms;
 		}
 
 }
