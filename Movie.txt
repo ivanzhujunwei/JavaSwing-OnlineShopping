@@ -1,4 +1,4 @@
-The Shawshank Redemption,1994,Drama,30.0,Frank Darabont,100,1
+The Shawshank Redemption,1994,Drama,30.0,Frank Darabont,96,1
 The Godfather,1972,Crime,20.0,Francis Ford Coppola,80,3
 The Dark Knight,2008,Action,60.0,Christopher Nolan,60,1
 12 Angry Men,1957,Action,10.0,Sidney Lumet,120,1

@@ -1,6 +1,6 @@
 Narcos,2015,Crime,50.0,Carlo Bernard,10,2,Wagner Moura
 Game of Thrones,2011,Adventure,80.0,David Benioff,20,6,Emilia Clarke
-Suits,2011,Comedy,50.0,Aaron Korsh,20,6,Gabriel Macht
+Suits,2011,Comedy,50.0,Aaron Korsh,19,6,Gabriel Macht
 Shameless,2011,Comedy,50.0,John Wells,19,7,Emmy Rossum
 The Walking Dead,2010,Horror,50.0,Frank Darabont,19,6,Andrew Lincoin
 American Horror Story,2011,Horror,50.0,Brad Falchuk,19,6,Lady Gaga

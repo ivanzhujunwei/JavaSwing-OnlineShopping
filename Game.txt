@@ -1,9 +1,9 @@
-PES2017,2016,XBOX ONE,99.95,KONAMI,74
+PES2017,2016,XBOX ONE,99.95,KONAMI,0
 Counter-strike,2015,Windows,99.0,Nexon,78
-Pokemon Sun,2016,Nintendo 3DS,69.95,Nintendo,93
-Call of Duty,2007,PlayStation3,19.9,Activision,97
+Pokemon Sun,2016,Nintendo 3DS,69.95,Nintendo,92
+Call of Duty,2007,PlayStation3,19.9,Activision,95
 NBA 2K17,2016,PlayStaion4,99.5,2K Sports,98
 World of Warcraft,2016,PC,69.95,Blizzard,94
-Overwatch Orgins Edition,2016,PC,67.0,Blizzard,100
+Overwatch Orgins Edition,2016,PC,67.0,Blizzard,97
 Overwatch Orgins Edition,2016,PC,67.0,Blizzard,99
 
