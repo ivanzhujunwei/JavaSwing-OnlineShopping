@@ -10,15 +10,22 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class LoginView extends View {
 
 	private static final long serialVersionUID = 1L;
+	
+	///////
+	private JRadioButton customer;
+	private JRadioButton admin;
+	private JPanel panel_identity;
 	
 	private JTextField username;
 	private JPasswordField password;
@@ -65,12 +72,29 @@ public class LoginView extends View {
 		verticalStrut = Box.createVerticalStrut(20);
 		panel_4.add(verticalStrut);
 		
+		///////
+		panel_identity = new JPanel();
+		customer = new JRadioButton("customer");
+		admin=new JRadioButton("admin");  
+		ButtonGroup bg=new ButtonGroup();  
+		bg.add(customer);
+		bg.add(admin);
+		customer.setSelected(true);
+		panel_identity.add(customer);
+		panel_identity.add(admin);
+		
 		panel_1 = new JPanel();
+		panel_4.add(panel_identity);
 		panel_4.add(panel_1);
+		
 		FlowLayout flowLayout = (FlowLayout) panel_1.getLayout();
 		flowLayout.setVgap(0);
 		flowLayout.setHgap(0);
 		flowLayout.setAlignment(FlowLayout.LEFT);
+		
+		
+//		panel_4.add(customer);
+//		panel_4.add(admin);
 		
 		lblUserId = new JLabel("User ID");
 		panel_1.add(lblUserId);
