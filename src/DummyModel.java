@@ -129,9 +129,15 @@ public class DummyModel implements Model
             String securityQuestion = customers[4];
             String securityAnswer = customers[5];
             String dob = customers[6];
+            String phone = customers[7];
+            String address = customers[8];
+            String cardNumber = customers[9];
             Customer c = new Customer(id, name, username, password, dob);
             c.setSecrQues(securityQuestion);
             c.setAnswer(securityAnswer);
+            c.setPhone(phone);
+            c.setAddress(address);
+            c.setCardNumber(cardNumber);
             customerList.put(username, c);
             passwords.put(username, password);
         }

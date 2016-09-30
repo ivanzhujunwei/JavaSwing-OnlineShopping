@@ -19,6 +19,11 @@ public class Movie extends Product{
 		this.genre = genre;
 		this.director = director;
 		this.numberOfFilms = numberOfFilms;
+		//Add and show extra property (by Richard)
+				this.setProperty("year", "Year", year);
+				this.setProperty("genre", "Genre", genre);
+				this.setProperty("director", "Director", director);
+				this.setProperty("numberOfFilms", "NumberOfFilms", numberOfFilms);
 	}
 
 	public int getYear() {

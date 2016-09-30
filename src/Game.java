@@ -25,6 +25,10 @@ public class Game extends Product{
         this.issueYear  = issueYear;
         this.publisher = publisher;
 //        this.quantity = quantity;
+      //Add and show extra property (by Richard)
+  		this.setProperty("issueYear", "IssueYear", issueYear);
+  		this.setProperty("platform", "Platform", platform);
+  		this.setProperty("publisher", "Publisher", publisher);
     }
 
     public int getIssueYear()

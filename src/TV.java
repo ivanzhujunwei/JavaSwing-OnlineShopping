@@ -20,6 +20,12 @@ public class TV extends Product{
 		this.director = director;
 		this.episodes = episodes;
 		this.star = star;
+		//Add and show extra property (by Richard)
+				this.setProperty("year", "Year", year);
+				this.setProperty("genre", "Genre", genre);
+				this.setProperty("director", "Director", director);
+				this.setProperty("episodes", "Episodes", episodes);
+				this.setProperty("star", "Star", star);
 	}
 
 	public int getYear() {

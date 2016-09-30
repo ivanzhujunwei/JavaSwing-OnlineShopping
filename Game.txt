@@ -1,5 +1,5 @@
 PES2017,2016,XBOX ONE,99.95,KONAMI,0
-Counter-strike,2015,Windows,99.0,Nexon,78
+Counter-strike,2015,Windows,99.0,Nexon,77
 Pokemon Sun,2016,Nintendo 3DS,69.95,Nintendo,92
 Call of Duty,2007,PlayStation3,19.9,Activision,95
 NBA 2K17,2016,PlayStaion4,99.5,2K Sports,98

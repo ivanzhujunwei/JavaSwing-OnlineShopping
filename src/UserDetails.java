@@ -26,6 +26,7 @@ public class UserDetails extends JDialog {
 	private JTextField phoneNumber;
 	private JTextField homeAddr;
 	private JTextField cardNum;
+	private JTextField doB;
 
 	public static void display(ShopController c){
 		UserDetails dialog = new UserDetails(c);
@@ -139,6 +140,26 @@ public class UserDetails extends JDialog {
 			contentPanel.add(cardNum, gbc_cardNum);
 			cardNum.setColumns(10);
 			cardNum.setText(user.getCardNumber());
+		}
+		{
+			JLabel lblDoB = new JLabel("Date of Birth:");
+			GridBagConstraints gbc_lblDoB = new GridBagConstraints();
+			gbc_lblDoB.anchor = GridBagConstraints.EAST;
+			gbc_lblDoB.insets = new Insets(0, 0, 0, 5);
+			gbc_lblDoB.gridx = 1;
+			gbc_lblDoB.gridy = 5;
+			contentPanel.add(lblDoB, gbc_lblDoB);
+		}
+		{
+			doB = new JTextField();
+			GridBagConstraints gbc_DoB = new GridBagConstraints();
+			gbc_DoB.insets = new Insets(0, 0, 0, 5);
+			gbc_DoB.fill = GridBagConstraints.HORIZONTAL;
+			gbc_DoB.gridx = 2;
+			gbc_DoB.gridy = 5;
+			contentPanel.add(doB, gbc_DoB);
+			doB.setColumns(10);
+			doB.setText(user.getDob());
 		}
 		{
 			JPanel buttonPane = new JPanel();

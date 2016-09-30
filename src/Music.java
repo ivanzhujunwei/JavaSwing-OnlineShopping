@@ -21,6 +21,11 @@ public class Music extends Product{
         this.genre = genre;
         this.year = year;
         this.numOfSongs = numOfSongs;
+      //Add and show extra property (by Richard)
+        this.setProperty("year", "Year", year);
+		this.setProperty("genre", "Genre", genre);
+		this.setProperty("singer", "Singer", singer);
+		this.setProperty("numOfSongs", "NumOfSongs", numOfSongs);
     }
 
     public String getSinger() {
