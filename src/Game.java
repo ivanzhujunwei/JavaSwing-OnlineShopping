@@ -13,28 +13,24 @@
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class Game extends Product{
-    private int issueYear;
+//    private int issueYear;
     private String platform;
     private String publisher;
 //    private int quantity;
             
-    public Game(ProductType type, String name,int issueYear,String platform, float price,String publisher,int quantity)
+    public Game(ProductType type, String name,int year,String platform, float price,String publisher,int quantity)
     {
-        super(name,price,quantity,type);
+        super(name,price,quantity,type,year);
         this.platform = platform;
-        this.issueYear  = issueYear;
+//        this.issueYear  = issueYear;
         this.publisher = publisher;
 //        this.quantity = quantity;
       //Add and show extra property (by Richard)
-  		this.setProperty("issueYear", "IssueYear", issueYear);
+  		this.setProperty("issueYear", "IssueYear", year);
   		this.setProperty("platform", "Platform", platform);
   		this.setProperty("publisher", "Publisher", publisher);
     }
 
-    public int getIssueYear()
-    {
-        return issueYear;
-    }
 
     public String getPlatform()
     {
@@ -47,10 +43,6 @@ public class Game extends Product{
     }
 
 
-    public void setIssueYear(int issueYear)
-    {
-        this.issueYear = issueYear;
-    }
 
     public void setPlatform(String platform)
     {
@@ -62,20 +54,10 @@ public class Game extends Product{
         this.publisher = publisher;
     }
 
-//    public int getQuantity()
-//    {
-//        return quantity;
-//    }
-//
-//    public void setQuantity(int quantity)
-//    {
-//        this.quantity = quantity;
-//    }
-
     @Override
 	public String toString() {
 		return this.getName() + FileHandler.SPLIT_COMMA + 
-				this.issueYear + FileHandler.SPLIT_COMMA + 
+				super.year + FileHandler.SPLIT_COMMA + 
 				this.platform +FileHandler.SPLIT_COMMA + 
 				this.getPrice()	+ FileHandler.SPLIT_COMMA + 
 				publisher + FileHandler.SPLIT_COMMA + 

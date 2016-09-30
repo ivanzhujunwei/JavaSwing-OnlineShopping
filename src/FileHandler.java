@@ -21,7 +21,9 @@ import java.util.Scanner;
 public class FileHandler
 {
 
-    public static final String CUSTOMER_DATA = "Customer.txt";
+	public static final String CUSTOMER_DATA = "Customer.txt";
+	public static final String ADMIN_DATA = "AdminDetails.txt";
+	
     
     public static final String GAME_FILE = "Game.txt";
     public static final String MUSIC_FILE = "Music.txt";

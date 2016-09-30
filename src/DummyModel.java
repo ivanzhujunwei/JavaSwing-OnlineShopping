@@ -14,7 +14,7 @@ public class DummyModel implements Model
     ArrayList<Product> productList = new ArrayList<Product>();
     HashMap<String, String> passwords = new HashMap<>();
     HashMap<String, Customer> customerList = new HashMap<>();
-//    HashMap<String, >
+    HashMap<String, Admin> adminList = new HashMap<>();
 
     public DummyModel()
     {
@@ -27,9 +27,43 @@ public class DummyModel implements Model
         loadProductData();
         // load customer data
         loadCusteomerData();
-        
+        // load admin data
+        loadAdminData();
     }
 
+    /***
+     * Load admin data
+     */
+    private void loadAdminData(){
+    	// Admin detail text
+    	// id,name,username,password,securityQuestion,securityAnswer,DOB
+    	String adminData = FileHandler.readFromFile(FileHandler.ADMIN_DATA);
+        String[] adminArray = adminData.split(FileHandler.SPLIT_CEMI);
+        for (int i = 0; i < adminArray.length; i++)
+        {
+            String[] customers = adminArray[i].split(FileHandler.SPLIT_COMMA);
+            String idStr = customers[0].trim();
+            int id = Integer.parseInt(idStr.trim());
+            String name = customers[1];
+            String username = customers[2];
+            String password = customers[3];
+            String securityQuestion = customers[4];
+            String securityAnswer = customers[5];
+            String dob = customers[6];
+//            String phone = customers[7];
+//            String address = customers[8];
+//            String cardNumber = customers[9];
+            Admin c = new Admin(id, name, username, password, dob);
+            c.setSecrQues(securityQuestion);
+            c.setAnswer(securityAnswer);
+//            c.setPhone(phone);
+//            c.setAddress(address);
+//            c.setCardNumber(cardNumber);
+            adminList.put(username, c);
+            passwords.put(username, password);
+        }
+    }
+    
     private void loadGameData()
     {
         String gameData = FileHandler.readFromFile(FileHandler.GAME_FILE);
@@ -216,10 +250,13 @@ public class DummyModel implements Model
 	        if (loginUser != null && password.equals(loginUser.getPassword())){
 	            return true;
 	        }
-	        return false;
     	}else{
     		///TODO
     		// add admin login validate
+    		Admin loginAdmin = adminList.get(username);
+    		if (loginAdmin != null && password.equals(loginAdmin.getPassword())){
+    			return true;
+    		}
     	}
 		return false;
     }
