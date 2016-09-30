@@ -29,6 +29,7 @@ public abstract class Product {
 	private float price;
 	private int quantity;
 	private ProductType type;
+	protected int year;
 	
 	/**
 	 * <pre>
@@ -36,11 +37,12 @@ public abstract class Product {
 	 * </pre>
 	 * @param name The name of the product
 	 */
-	public Product(String name,float price, int quantity, ProductType type){
+	public Product(String name,float price, int quantity, ProductType type, int year){
 		setName(name);
 		setPrice(price);
 		setType(type);
 		setQuantity(quantity);
+		setYear(year);
 		this.setProperty("price", "Price ($)", price);
 	}
 	
@@ -180,6 +182,14 @@ public abstract class Product {
 
 	public void setType(ProductType type) {
 		this.type = type;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
 	}
 
 }

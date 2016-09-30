@@ -140,7 +140,6 @@ public class LoginView extends View {
 	}
 	
 	public void initialize(){
-		
 		loginButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				String loginIdentity = customer.isSelected()? "CUSTOMER":"ADMIN";

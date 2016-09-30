@@ -8,18 +8,18 @@ public class Music extends Product{
 
     private String singer;
     private String genre;
-    private int year;
+//    private int year;
     private int numOfSongs;
 
-    public Music(String name, float price, int quantity, ProductType type) {
-        super(name, price, quantity, type);
+    public Music(String name, float price, int quantity, ProductType type, int year){
+        super(name, price, quantity, type,year);
     }
 
     public Music(ProductType type, String name, float price, int year, String genre, String singer, int quantity, int numOfSongs){
-        super(name, price, quantity, type);
+        super(name, price, quantity, type,year);
         this.singer = singer;
         this.genre = genre;
-        this.year = year;
+//        this.year = year;
         this.numOfSongs = numOfSongs;
       //Add and show extra property (by Richard)
         this.setProperty("year", "Year", year);

@@ -3,19 +3,19 @@
 
 public class Movie extends Product{
 
-	private int year;
+//	private int year;
 	private String genre;
 	private String director;
 	private int numberOfFilms;
 	
-	public Movie(String name, float price, int quantity, ProductType type) {
-		super(name, price, quantity, type);
+	public Movie(String name, float price, int quantity, ProductType type, int year) {
+		super(name, price, quantity, type, year);
 		// TODO Auto-generated constructor stub
 	}
 	
 	public Movie(ProductType type, String name, float price, int year, String genre, String director, int quantity, int numberOfFilms){
-		super(name, price, quantity, type);
-		this.year = year;
+		super(name, price, quantity, type, year);
+//		this.year = year;
 		this.genre = genre;
 		this.director = director;
 		this.numberOfFilms = numberOfFilms;
