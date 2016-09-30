@@ -185,7 +185,8 @@ public class ShopController {
 			showPopup("Signup failed, that userID may already be in use!");
 		} else {
 			showPopup("Your account has been created, please edit your details by clicking 'My account' in the top right.");
-			attemptLogin(username, pass);
+			// The created account can only be used as CUSTOMER
+			attemptLogin(username, pass, "CUSTOMER");
 		}
 	}
 	
@@ -198,8 +199,8 @@ public class ShopController {
 	 * @param username The supplied user ID
 	 * @param password The supplied password
 	 */
-	public void attemptLogin(String username, String password){
-		if(backend.login(username, password)){
+	public void attemptLogin(String username, String password, String loginIdentity){
+		if(backend.login(username, password,loginIdentity)){
 			currentUserID = username;
 			showProductList();
 		} else {

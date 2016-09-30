@@ -14,6 +14,7 @@ public class DummyModel implements Model
     ArrayList<Product> productList = new ArrayList<Product>();
     HashMap<String, String> passwords = new HashMap<>();
     HashMap<String, Customer> customerList = new HashMap<>();
+//    HashMap<String, >
 
     public DummyModel()
     {
@@ -208,13 +209,19 @@ public class DummyModel implements Model
     
 
     @Override
-    public boolean login(String username, String password)
+    public boolean login(String username, String password, String loginIdentity)
     {
-        Customer loginUser = customerList.get(username);
-        if (loginUser != null && password.equals(loginUser.getPassword())){
-            return true;
-        }
-        return false;
+    	if (loginIdentity.equals("CUSTOMER")){
+	        Customer loginUser = customerList.get(username);
+	        if (loginUser != null && password.equals(loginUser.getPassword())){
+	            return true;
+	        }
+	        return false;
+    	}else{
+    		///TODO
+    		// add admin login validate
+    	}
+		return false;
     }
 
     @Override

@@ -143,7 +143,8 @@ public class LoginView extends View {
 		
 		loginButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				getController().attemptLogin(username.getText(), new String(password.getPassword()));
+				String loginIdentity = customer.isSelected()? "CUSTOMER":"ADMIN";
+				getController().attemptLogin(username.getText(), new String(password.getPassword()),loginIdentity);
 			}
 		});
 	}

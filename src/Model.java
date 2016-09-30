@@ -36,9 +36,10 @@ public interface Model {
 	 * </pre>
 	 * @param username The user ID of the user attempting to login
 	 * @param password The supplied password to be tested
+	 * @param loginIdentity The user will login in as customer or admin
 	 * @return This method returns true if the login was successful, or false if it was not
 	 */
-	public boolean login(String username, String password);
+	public boolean login(String username, String password,String loginIdentity);
 	
 	/**
 	 * <pre>
