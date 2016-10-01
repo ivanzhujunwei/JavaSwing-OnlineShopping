@@ -13,12 +13,11 @@
  * @author Sammy Guergachi <sguergachi at gmail.com>
  */
 public class Game extends Product{
-//    private int issueYear;
-    private String platform;
+
+	private String platform;
     private String publisher;
-//    private int quantity;
             
-    public Game(ProductType type, String name,int year,String platform, float price,String publisher,int quantity)
+    public Game(ProductType type, String name,int year,String platform, double price,String publisher,int quantity)
     {
         super(name,price,quantity,type,year);
         this.platform = platform;

@@ -377,4 +377,9 @@ public class DummyModel implements Model
 		return customerList;
 	}
 
+	@Override
+	public List<Product> getProductList() {
+		return productList;
+	}
+
 }

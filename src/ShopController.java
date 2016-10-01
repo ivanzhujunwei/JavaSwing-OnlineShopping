@@ -4,6 +4,7 @@ import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
 
 import javax.swing.ImageIcon;
@@ -369,4 +370,11 @@ public class ShopController {
 		FileHandler.writeToFile(cartData, FileHandler.CART_FILE);
 	}
 	
+	/***
+	 * Add game into productList
+	 * @param game
+	 */
+	public void addProduct(Product p){
+		this.backend.getProductList().add(p);
+	}
 }

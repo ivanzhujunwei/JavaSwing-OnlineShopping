@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
  * - Sale "% off"
  *</pre>
  */
-public abstract class Product {
+public class Product {
 
 	private HashMap<String, Object> props = new HashMap<String, Object>();
 	private HashMap<String, String> dispNames = new HashMap<String, String>();
@@ -26,7 +26,7 @@ public abstract class Product {
 	
 	private ImageIcon image = null;
 	// add attributes
-	private float price;
+	private double price;
 	private int quantity;
 	private ProductType type;
 	protected int year;
@@ -37,10 +37,18 @@ public abstract class Product {
 	 * </pre>
 	 * @param name The name of the product
 	 */
-	public Product(String name,float price, int quantity, ProductType type, int year){
+	public Product(String name,double price, int quantity, ProductType type, int year){
 		setName(name);
 		setPrice(price);
 		setType(type);
+		setQuantity(quantity);
+		setYear(year);
+		this.setProperty("price", "Price ($)", price);
+	}
+	
+	public Product(String name,double price, int quantity,  int year){
+		setName(name);
+		setPrice(price);
 		setQuantity(quantity);
 		setYear(year);
 		this.setProperty("price", "Price ($)", price);
@@ -160,11 +168,11 @@ public abstract class Product {
 		else return this.image;
 	}
 
-	public float getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
