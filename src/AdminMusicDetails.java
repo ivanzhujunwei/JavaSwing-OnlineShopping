@@ -42,17 +42,15 @@ public class AdminMusicDetails extends AdminProductDetails {
 		contentPanel.setLayout(new GridLayout(7, 2));
 		this.getContentPane().add(contentPanel, BorderLayout.NORTH);
 	}
-
-	public JLabel getSingerLabel() {
-		return singerLabel;
-	}
-
-	public JLabel getGenreLabel() {
-		return genreLabel;
-	}
-
-	public JLabel getNumOfSongsLabel() {
-		return numOfSongsLabel;
+	
+	@Override
+	public Product toProduct() {
+		Product p = super.toProduct();
+		String singer = this.getSinger().getText();
+		String genre = this.getGenre().getText();
+		int numOfSongs = (int) this.getNumOfSongs().getValue();
+		// ProductType type, String name, float price, int year, String genre, String singer, int quantity, int numOfSongs
+		return new Music(ProductType.MUSIC, p.getName(),p.getPrice(), p.getYear(), genre, singer, p.getQuantity(), numOfSongs);
 	}
 
 	public JTextField getSinger() {
