@@ -1,0 +1,7 @@
+Process of how to create a TV or movie product.
+
+#1 Create a subclass (AdminTVDetailss.java / AdminMovicDetails.java) which extends AdminProductDetails.java
+#2 Customize subclass's own attribute (each subclass has its own attribute besides the public attributes)
+#3 Customize subclass's constructor
+#4 Override toProduct() method in subclass
+#5 Implement method in AdminProductList (Line 59 & 62) to display Movie or TV dialog.
