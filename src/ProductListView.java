@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -28,6 +30,38 @@ public class ProductListView extends View {
 		FlowLayout flowLayout = (FlowLayout) panel.getLayout();
 		flowLayout.setAlignment(FlowLayout.RIGHT);
 		add(panel, BorderLayout.NORTH);
+	
+		//Product Categorize GUI(by Richard)
+		JLabel comboBoxLabel = new JLabel();
+		comboBoxLabel.setText("Please Choose Product Category:");
+		panel.add(comboBoxLabel);
+		
+		final JComboBox<String> productBox = new JComboBox<String>();
+		productBox.addItem("All Products");
+		productBox.addItem("Music");
+		productBox.addItem("Movie");
+		productBox.addItem("Game");
+		productBox.addItem("TV");
+		panel.add(productBox);
+		
+		productBox.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				String s = (String) productBox.getSelectedItem();
+				
+				switch (s){
+				case "Music":
+					initializeByProduct("Music");break;
+				case "Movie":
+					initializeByProduct("Movie");break;
+				case "Game":
+					initializeByProduct("Game");break;
+				case "TV":
+					initializeByProduct("TV");break;
+				default:
+					initialize();break;
+				}
+			}
+		});
 		
 		JButton myInfoButton = new JButton("My account");
 		panel.add(myInfoButton);
@@ -83,5 +117,15 @@ public class ProductListView extends View {
 		}
 		revalidate();
 	}
-
+	
+	// display product by catogorization
+	public void initializeByProduct(String productType) {
+		scrollPanel.removeAll();
+		List<Product> list = getController().getBackend().getProducts();
+		for(Product p : list){
+			if(p.getType().toString().equals(productType.toUpperCase()))
+			scrollPanel.add(new ProductThumbnail(getController(), p));
+		}
+		revalidate();
+	}
 }

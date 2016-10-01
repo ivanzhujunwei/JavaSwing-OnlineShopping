@@ -56,7 +56,7 @@ public class AdminProductListView extends View {
 		panel.add(cartButton);
 		
 		//////////// log out
-		JButton logoutBtn = new JButton("Lssogout");
+		JButton logoutBtn = new JButton("Logout");
 		logoutBtn.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				int dialogResult = JOptionPane.showConfirmDialog (null, "Do you want to logout?","Confirm", 2);
