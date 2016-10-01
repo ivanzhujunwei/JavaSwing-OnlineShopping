@@ -119,4 +119,6 @@ public interface Model {
 	public int processOrder(String currentUserID, Cart cart);
 	
 	public HashMap<String, Customer> getCustomerList();
+	
+	public List<Product> getProductList();
 }

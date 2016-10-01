@@ -372,4 +372,11 @@ public class ShopController {
 		FileHandler.writeToFile(cartData, FileHandler.CART_FILE);
 	}
 	
+	/***
+	 * Add game into productList
+	 * @param game
+	 */
+	public void addProduct(Product p){
+		this.backend.getProductList().add(p);
+	}
 }
