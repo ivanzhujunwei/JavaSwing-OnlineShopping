@@ -3,18 +3,17 @@
 
 public class TV extends Product{
 
-	private int year;
 	private String genre;
 	private String director;
 	private int episodes;
 	private String star;
 	
-	public TV(String name, float price, int quantity, ProductType type) {
-		super(name, price, quantity, type);
+	public TV(String name, float price, int quantity, ProductType type, int year) {
+		super(name, price, quantity, type, year);
 	}
 	
 	public TV(ProductType type, String name, float price, int year, String genre, String director, int quantity, int episodes, String star){
-		super(name, price, quantity, type);
+		super(name, price, quantity, type, year);
 		this.year = year;
 		this.genre = genre;
 		this.director = director;
@@ -26,14 +25,6 @@ public class TV extends Product{
 				this.setProperty("director", "Director", director);
 				this.setProperty("episodes", "Episodes", episodes);
 				this.setProperty("star", "Star", star);
-	}
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
 	}
 
 	public String getGenre() {

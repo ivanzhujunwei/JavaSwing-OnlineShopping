@@ -117,7 +117,7 @@ public class ShopController {
 	public void init(){
 		window.setResizable(false);
 		window.setTitle("Shop");
-		window.setSize(1000, 800);
+		window.setSize(900, 600);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
@@ -202,7 +202,13 @@ public class ShopController {
 	public void attemptLogin(String username, String password, String loginIdentity){
 		if(backend.login(username, password,loginIdentity)){
 			currentUserID = username;
-			showProductList();
+			// If customer logged in
+			if(loginIdentity.equals("CUSTOMER")){
+				showProductList();
+			}else{
+				showAdminProductList();
+			}
+			
 		} else {
 			showPopup("Login failed! Please ensure that your user ID and password are correct.");
 		}
@@ -294,6 +300,13 @@ public class ShopController {
 	 */
 	public void showProductList() {
 		setView(new ProductListView());
+	}
+	
+	/***
+	 * Show admin product list view
+	 */
+	public void showAdminProductList(){
+		setView(new AdminProductListView());
 	}
 
 	/**
