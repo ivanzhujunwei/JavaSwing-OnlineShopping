@@ -4,7 +4,6 @@ import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map.Entry;
 
 import javax.swing.ImageIcon;
@@ -309,9 +308,7 @@ public class ShopController {
 	public void showAdminProductList(){
 		setView(new AdminProductListView());
 	}
-	/***
-	 * admin add product to system
-	 */
+
 	/**
 	 * <pre>
 	 * Attempts a transaction using the current user's details and the current cart.
