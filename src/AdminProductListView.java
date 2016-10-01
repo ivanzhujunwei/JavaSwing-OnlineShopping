@@ -45,15 +45,15 @@ public class AdminProductListView extends View {
 			}
 		});
 		
-		JButton cartButton = new JButton("Generate report");
+		JButton generateReportButton = new JButton("Generate report");
 		
-		cartButton.addActionListener(new ActionListener(){
+		generateReportButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				getController().showCartView();
 			}
 		});
 		
-		panel.add(cartButton);
+		panel.add(generateReportButton);
 		
 		//////////// log out
 		JButton logoutBtn = new JButton("Logout");
