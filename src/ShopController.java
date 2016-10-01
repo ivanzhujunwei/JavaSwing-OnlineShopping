@@ -4,7 +4,6 @@ import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map.Entry;
 
 import javax.swing.ImageIcon;
