@@ -82,10 +82,11 @@ public class AdminProductListView extends View {
 		logoutBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int dialogResult = JOptionPane.showConfirmDialog(null,
-						"Do you want to logout?", "Confirm", 2);
+						"Do you want to logout and save all changes?", "Confirm", 2);
 				if (dialogResult == JOptionPane.YES_OPTION) {
 					// save cart data
-					getController().storeCartData();
+//					getController().storeCartData();
+					getController().storeProductInfoByAdmin();
 					// redirect to log in view
 					getController().getWindow().dispose();
 					getController().init();

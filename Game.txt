@@ -6,4 +6,6 @@ NBA 2K17,2016,PlayStaion4,99.5,2K Sports,96
 World of Warcraft,2016,PC,69.0,Blizzard,92
 Overwatch Orgins Edition,2016,PC,67.0,Blizzard,96
 Overwatch Orgins Edition,2016,PC,67.0,Blizzard,99
+NewGame,2017,NewGamePlatform,98.0,NewGamePublihser,3
+1111,2016,1111,111.0,1111,1111
 

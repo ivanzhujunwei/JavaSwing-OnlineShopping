@@ -399,4 +399,33 @@ public class ShopController {
 	public List<AdminReport> generateReport(String productName, String start, String end){
 		return this.backend.generateReport(productName, start, end);
 	}
+	
+	//save all product data when admin log out
+		public void storeProductInfoByAdmin (){
+			String gameData = "";
+			String movieData = "";
+			String TVData = "";
+			String musicData = "";
+			for(Product product : this.backend.getProductList()){
+				switch(product.getType()){
+				case GAME:
+					Game g = (Game) product;
+					gameData += g.toString() + "\r\n";break;
+				case MOVIE:
+					Movie m = (Movie) product;
+					movieData += m.toString() + "\r\n";break;
+				case TV:
+					TV t = (TV) product;
+					TVData += t.toString() + "\r\n";break;
+				case MUSIC:
+					Music mu = (Music) product;
+					musicData += mu.toString() + "\r\n";break;
+				default:break;
+				}
+			};
+			FileHandler.writeToFile(gameData, FileHandler.GAME_FILE);
+			FileHandler.writeToFile(movieData, FileHandler.MOVIE_FILE);
+			FileHandler.writeToFile(TVData, FileHandler.TV_FILE);
+			FileHandler.writeToFile(musicData, FileHandler.MUSIC_FILE);
+		}
 }
