@@ -1,0 +1,3 @@
+TODO:
+#1 ADD PRODUCT , product name can't be the same (read from order.txt, product name is the searching criteria)
+#2 ADD PRODUCT , product information should be written into files

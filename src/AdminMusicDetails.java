@@ -64,5 +64,22 @@ public class AdminMusicDetails extends AdminProductDetails {
 	public JSpinner getNumOfSongs() {
 		return numOfSongs;
 	}
-
+	
+	@Override
+	public boolean validateInput(){
+		if(super.validateInput()){
+			String genreTxtField = getGenre().getText();
+			String singerTxtField = getSinger().getText();
+			// not null
+			if(Utility.isEmpty(genreTxtField) || Utility.isEmpty(singerTxtField) || Utility.isEmpty(numOfSongs)){
+				return false;
+			}
+			// numofFilms must be digit
+//			if (!Utility.isInteger(numOfSongs)){
+//				return false;
+//			}
+			return true;
+		}
+		return false;
+	}
 }

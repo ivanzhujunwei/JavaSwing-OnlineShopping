@@ -423,15 +423,15 @@ public class DummyModel implements Model {
 				if (ct.product.getName().equals(productName)) {
 					boolean isAdd = false;
 					// no date input
-					if (isEmpty(start) && isEmpty(end)) {
+					if (Utility.isEmpty(start) && Utility.isEmpty(end)) {
 						isAdd = true;
 						// end date is empty
-					} else if (isEmpty(start) && !isEmpty(end)) {
+					} else if (Utility.isEmpty(start) && !Utility.isEmpty(end)) {
 						if(orderedDate.compareTo(end) <= 0){
 							isAdd = true;
 						}
 						// start date is empty
-					}else if (isEmpty(end) && !isEmpty(start)){
+					}else if (Utility.isEmpty(end) && !Utility.isEmpty(start)){
 						if(orderedDate.compareTo(start) >= 0){
 							isAdd = true;
 						}
@@ -456,16 +456,6 @@ public class DummyModel implements Model {
 			}
 		}
 		return reports;
-	}
-
-	private boolean isEmpty(String str) {
-		if (str == null) {
-			return true;
-		}
-		if (str.trim().equals("")) {
-			return true;
-		}
-		return false;
 	}
 
 }

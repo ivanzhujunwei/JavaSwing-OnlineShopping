@@ -67,10 +67,33 @@ public class AdminProductDetails extends JDialog {
 	 * Display music detail dialog
 	 * 
 	 * @param c
-	 *            ShopController
 	 */
 	public static void displayMusicDetails(DefaultTableModel dt, ShopController c, ProductType type) {
 		AdminMusicDetails dialog = new AdminMusicDetails(c, dt);
+		setProductType(type);
+		display(c, dialog);
+	}
+	
+	/***
+	 * Display TV detail dialog
+	 * @param dt
+	 * @param c
+	 * @param type
+	 */
+	public static void displayTVDetails(DefaultTableModel dt, ShopController c, ProductType type) {
+		AdminTVDetails dialog = new AdminTVDetails(c, dt);
+		setProductType(type);
+		display(c, dialog);
+	}
+
+	/***
+	 * Display Movie detail dialog
+	 * @param dt
+	 * @param c
+	 * @param type
+	 */
+	public static void displayMovieDetails(DefaultTableModel dt, ShopController c, ProductType type) {
+		AdminMovieDetails dialog = new AdminMovieDetails(c, dt);
 		setProductType(type);
 		display(c, dialog);
 	}
@@ -86,6 +109,27 @@ public class AdminProductDetails extends JDialog {
 		int quantity = (int) this.getQuantity().getValue();
 		int year = (int) this.getYear().getValue();
 		return new Product(name, price, quantity, year);
+	}
+	
+	/***
+	 * Validate all inputs
+	 * @return
+	 */
+	public boolean validateInput(){
+		// Text field validate
+		if(Utility.isEmpty(this.getProductName().getText())){
+			return false;
+		}
+		if(Utility.isEmpty(this.getPrice().getValue())){
+			return false;
+		}
+		if(Utility.isEmpty(quantity)){
+			return false;
+		}
+		if(Utility.isEmpty(this.getYear().getValue())){
+			return false;
+		}
+		return true;
 	}
 
 	public AdminProductDetails(final ShopController c, final DefaultTableModel dt) {
@@ -128,14 +172,19 @@ public class AdminProductDetails extends JDialog {
 				okButton.setActionCommand("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						// Assemble dialog inputs into a product object
-						Product p = toProduct();
-						// Add this product into productList
-						c.addProduct(p);
-						// Get the table model in productListView, add a new row into this model
-						dt.addRow(new Object[] { p.getType(), p.getName(), p.getPrice(), p.getQuantity() });
-						// Close this dialog
-						me.dispose();
+						// validate
+						if (validateInput()){
+							// Assemble dialog inputs into a product object
+							Product p = toProduct();
+							// Add this product into productList
+							c.addProduct(p);
+							// Get the table model in productListView, add a new row into this model
+							dt.addRow(new Object[] { p.getType(), p.getName(), p.getPrice(), p.getQuantity() });
+							// Close this dialog
+							me.dispose();
+						}else{
+							c.showPopup("Wrong input! \nYour input can't be null.  ");
+						}
 					}
 				});
 				buttonPane.add(okButton);

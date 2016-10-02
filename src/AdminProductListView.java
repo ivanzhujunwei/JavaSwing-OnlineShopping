@@ -56,10 +56,10 @@ public class AdminProductListView extends View {
 					AdminProductDetails.displayMusicDetails(tableModel, getController(),ProductType.MUSIC);
 					break;
 				case MOVIE:
-					// TODO
+					AdminProductDetails.displayMovieDetails(tableModel, getController(),ProductType.GAME);
 					break;
 				case TV:
-					// TODO
+					AdminProductDetails.displayTVDetails(tableModel, getController(),ProductType.GAME);
 					break;
 					default:break;
 				}

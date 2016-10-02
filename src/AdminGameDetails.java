@@ -48,4 +48,18 @@ public class AdminGameDetails extends AdminProductDetails {
 		// ProductType type, String name,int year,String platform, float price,String publisher,int quantity
 		return new Game(ProductType.GAME, p.getName(), p.getYear(), platform, p.getPrice(), publisher, p.getQuantity());
 	}
+	
+	@Override
+	public boolean validateInput(){
+		if(super.validateInput()){
+			String platform = getPlatform().getText();
+			String publisher = getPublisher().getText();
+			// not null
+			if(Utility.isEmpty(platform) || Utility.isEmpty(publisher)){
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
 }
