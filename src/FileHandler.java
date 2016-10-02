@@ -29,8 +29,7 @@ public class FileHandler
     public static final String MUSIC_FILE = "Music.txt";
     public static final String TV_FILE = "TV Series.txt";
     public static final String MOVIE_FILE = "Movie.txt";
-    
-    public static final String ORDER_FILE = "order.txt";
+    public static final String ORDER_FILE = "Order.txt";
     public static final String CART_FILE = "cart.txt";
     public static final String SPLIT_CEMI = ";";
     public static final String SPLIT_COMMA = ",";

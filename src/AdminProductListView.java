@@ -71,14 +71,14 @@ public class AdminProductListView extends View {
 
 		cartButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				getController().showCartView();
+				getController().showAdminReportView();
 			}
 		});
 
 		panel.add(cartButton);
 
 		// ////////// log out
-		JButton logoutBtn = new JButton("Lssogout");
+		JButton logoutBtn = new JButton("Logout");
 		logoutBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int dialogResult = JOptionPane.showConfirmDialog(null,
@@ -112,7 +112,7 @@ public class AdminProductListView extends View {
 		// / Add product table
 		scrollPanel = new JPanel();
 		JScrollPane scroll = new JScrollPane(productTable);
-		scrollPanel.setLayout(new GridLayout(0, 3, 0, 0));
+//		scrollPanel.setLayout(new GridLayout(0, 3, 0, 0));
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 

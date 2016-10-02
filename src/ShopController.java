@@ -28,7 +28,11 @@ public class ShopController {
 	 * The store logo.
 	 * </pre>
 	 */
-	public static ImageIcon LOGO_ICON = new ImageIcon(ShopController.class.getResource("logo.png"));
+	public static ImageIcon LOGO_ICON = generateIcon("https://placeholdit.imgix.net/~text?txtsize=23&bg=ffffff&txtclr=000000&txt=No+Image&w=200&h=200", 150, 150);
+	public static ImageIcon MUSIC_ICON = generateIcon("https://pbs.twimg.com/profile_images/743536681706364929/X2qPv11V.jpg", 150, 150);
+	public static ImageIcon MOVIE_ICON = generateIcon("https://upload.wikimedia.org/wikipedia/en/9/92/The_Angry_Birds_Movie_Soundtrack.jpg", 150, 150);
+	public static ImageIcon TV_ICON = generateIcon("http://shortyawards.com.s3.amazonaws.com/entries/8th/18679295525_f39cc1bc70_z.jpg", 150, 150);
+	public static ImageIcon GAME_ICON = generateIcon("https://content.halocdn.com/media/Default/games/halo-spartan-assault/Page/game_overview_thumbnail_halospartanassault-9f927d8913d5434499e8d31a0d4c88e7.jpg", 150, 150);
 	/**
 	 * <pre>
 	 * The image cache that is used to save time and speed up loading.
@@ -290,7 +294,7 @@ public class ShopController {
 	 * </pre>
 	 * @return The total price of all item in the cart
 	 */
-	public float getTotalCartPrice(){
+	public double getTotalCartPrice(){
 		return getBackend().getPrice(getCurrentCustomerDetails().getCart());
 	}
 
@@ -376,5 +380,23 @@ public class ShopController {
 	 */
 	public void addProduct(Product p){
 		this.backend.getProductList().add(p);
+	}
+	
+	/***
+	 * Show Admin generating report view
+	 */
+	public void showAdminReportView(){
+		setView(new AdminReportView());
+	}
+	
+	/***
+	 * Generate report
+	 * @param productName product Name
+	 * @param start Start time
+	 * @param end End time
+	 * @return List<AdminReport> 
+	 */
+	public List<AdminReport> generateReport(String productName, String start, String end){
+		return this.backend.generateReport(productName, start, end);
 	}
 }

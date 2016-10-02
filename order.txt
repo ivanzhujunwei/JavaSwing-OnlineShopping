@@ -1,15 +1,13 @@
-jn319^Pokemon Sun^^3.0^^^Counter-strike^^3.0^^^PES2017^^2.0^^^Call of Duty^^1.0^^^NBA 2K17^^1.0^^^World of Warcraft^^1.0^^^
-jn319^Pokemon Sun^^1.0^^^Counter-strike^^1.0^^^
-jn319^2016/09/20 22:57:51Pokemon Sun^^1.0^^^Counter-strike^^1.0^^^PES2017^^1.0^^^Call of Duty^^1.0^^^
-jn319;2016/09/20 23:00:16;Pokemon Sun^^1.0;Counter-strike^^1.0;PES2017^^1.0;Call of Duty^^1.0;NBA 2K17^^1.0;
-jn319,2016/09/21 00:57:05,Counter-strike,3,PES2017,5,
-jn319,2016/09/21 00:58:10,World of Warcraft,5,
-jn319,2016/09/21 01:28:37,Counter-strike,3,PES2017,5,The Dark Knight,1,Overwatch Orgins Edition,1,The Godfather,1,Schindler's List,3,
-jn319,2016/09/21 01:35:07,Counter-strike,4,PES2017,5,Pokemon Sun,1,The Lord of the Rings,1,Schindler's List,1,The Godfather,1,The Dark Knight,1,
-jn319,2016/09/21 13:08:27,Counter-strike,3,PES2017,5,Atlanta,1,Westworld,1,Shameless,1,The Walking Dead,1,American Horror Story,1,
-ol123,2016/09/21 15:02:26,Counter-strike,3,
-jn319,2016/09/22 00:58:25,Overwatch Orgins Edition,1,Suits,1,PES2017,1,
-jn319,2016/09/22 15:33:26,Overwatch Orgins Edition,1,PES2017,1,
-jn319,2016/09/22 15:41:09,Pokemon Sun,1,The Shawshank Redemption,1,
-jn319,2016/09/22 15:42:18,The Shawshank Redemption,3,Call of Duty,2,
-jn319,2016/09/30 12:34:00,Counter-strike,1,
+0,jn319,2016/09/21 00:58:10,World of Warcraft,5,
+1,jn319,2016/09/21 01:28:37,Counter-strike,3,PES2017,5,The Dark Knight,1,Overwatch Orgins Edition,1,The Godfather,1,Schindler's List,3,
+2,jn319,2016/09/21 01:35:07,Counter-strike,4,PES2017,5,Pokemon Sun,1,The Lord of the Rings,1,Schindler's List,1,The Godfather,1,The Dark Knight,1,
+4,jn319,2016/09/21 13:08:27,Counter-strike,3,PES2017,5,Atlanta,1,Westworld,1,Shameless,1,The Walking Dead,1,American Horror Story,1,
+5,ol123,2016/09/21 15:02:26,Counter-strike,3,
+6,jn319,2016/09/22 00:58:25,Overwatch Orgins Edition,1,Suits,1,PES2017,1,
+7,jn319,2016/09/22 15:33:26,Overwatch Orgins Edition,1,PES2017,1,
+8,jn319,2016/09/22 15:41:09,Pokemon Sun,1,The Shawshank Redemption,1,
+9,jn319,2016/09/22 15:42:18,The Shawshank Redemption,3,Call of Duty,2,
+10,jn319,2016/09/30 12:34:00,Counter-strike,1,
+11,jn319,2016/10/02 15:20:34,Call of Duty,1,NBA 2K17,1,World of Warcraft,1,Overwatch Orgins Edition,1,
+12,ria11,2016/10/02 15:21:15,Call of Duty,1,NBA 2K17,1,World of Warcraft,1,
+13,st291,2016/10/02 15:31:29,Call of Duty,1,Twenty dollars,1,

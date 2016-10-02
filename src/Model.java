@@ -78,7 +78,7 @@ public interface Model {
 	 * @param cart The cart to calculate the price of
 	 * @return The total price of all items in the cart.
 	 */
-	public float getPrice(Cart cart);
+	public double getPrice(Cart cart);
 	
 	/**
 	 * <pre>
@@ -121,4 +121,7 @@ public interface Model {
 	public HashMap<String, Customer> getCustomerList();
 	
 	public List<Product> getProductList();
+
+	public List<AdminReport> generateReport(String productName, String start, String end);
+	
 }

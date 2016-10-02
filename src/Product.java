@@ -164,7 +164,17 @@ public class Product {
 	 * @return The image associated with this product
 	 */
 	public ImageIcon getImage(){
-		if(this.image == null) return ShopController.NO_IMAGE_ICON;
+		switch (this.type) {
+		case GAME:
+			return ShopController.GAME_ICON;
+		case MOVIE:
+			return ShopController.MOVIE_ICON;
+		case TV:
+			return ShopController.TV_ICON;
+		case MUSIC:
+			return ShopController.MUSIC_ICON;
+		}
+		if(this.image == null) return ShopController.LOGO_ICON;
 		else return this.image;
 	}
 
