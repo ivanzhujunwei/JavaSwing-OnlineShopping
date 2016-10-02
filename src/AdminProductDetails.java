@@ -13,6 +13,9 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *This class is used as a public view for each products to create their own customized view.
+ */
 public class AdminProductDetails extends JDialog {
 
 	protected static ProductType dialogType;

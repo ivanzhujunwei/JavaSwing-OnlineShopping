@@ -5,6 +5,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * This class contains some basic funtions of shopping system
+ */
 public class DummyModel implements Model {
 	// product name must not the same!!!
 	ArrayList<Product> productList = new ArrayList<Product>();

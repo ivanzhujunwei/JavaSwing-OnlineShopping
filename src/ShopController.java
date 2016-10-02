@@ -11,6 +11,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+/**
+ * This class is the main shop controller worked behind views
+ */
 public class ShopController {
 
 	/*

@@ -17,6 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * This class is the view shows customer's personal information.
+ */
 public class UserDetails extends JDialog {
 
 	private static final long serialVersionUID = 1L;

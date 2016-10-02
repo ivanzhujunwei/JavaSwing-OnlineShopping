@@ -5,6 +5,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *This class is used as a view for admin to create a game product into system.
+ */
 public class AdminGameDetails extends AdminProductDetails {
 	// ////////////
 	// game

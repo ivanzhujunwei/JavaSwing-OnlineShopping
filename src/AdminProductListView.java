@@ -15,6 +15,9 @@ import javax.swing.ScrollPaneConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
+/**
+ *This view is worked as a main view when admin logged into the system, which shows all products in the system.
+ */
 public class AdminProductListView extends View {
 
 	private static final long serialVersionUID = 1L;
@@ -56,10 +59,10 @@ public class AdminProductListView extends View {
 					AdminProductDetails.displayMusicDetails(tableModel, getController(),ProductType.MUSIC);
 					break;
 				case MOVIE:
-					AdminProductDetails.displayMovieDetails(tableModel, getController(),ProductType.GAME);
+					AdminProductDetails.displayMovieDetails(tableModel, getController(),ProductType.MOVIE);
 					break;
 				case TV:
-					AdminProductDetails.displayTVDetails(tableModel, getController(),ProductType.GAME);
+					AdminProductDetails.displayTVDetails(tableModel, getController(),ProductType.TV);
 					break;
 					default:break;
 				}

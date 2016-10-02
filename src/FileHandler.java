@@ -15,8 +15,7 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
- *
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ *This is the class responsible for IO manipulation.
  */
 public class FileHandler
 {

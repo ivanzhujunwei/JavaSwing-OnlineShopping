@@ -9,8 +9,7 @@
 
 
 /**
- * 
- * @author Sammy Guergachi <sguergachi at gmail.com>
+ * This class represents a game product entity,
  */
 public class Game extends Product{
 

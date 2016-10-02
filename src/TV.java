@@ -1,6 +1,8 @@
 
 
-
+/**
+ * This class represents a TV series product entity,
+ */
 public class TV extends Product{
 
 	private String genre;

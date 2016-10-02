@@ -17,7 +17,9 @@ import javax.swing.JSeparator;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 
-
+/**
+ * This class represents the customer's cart view.
+ */
 public class CartView extends View {
 
 	private static final long serialVersionUID = 1L;

@@ -2,7 +2,7 @@
 
 
 /**
- * Created by Richard's Surface on 9/21/2016.
+ * This class represents a music product entity,
  */
 public class Music extends Product{
 

@@ -1,6 +1,8 @@
 
 
-
+/**
+ * This class represents a movie product entity,
+ */
 public class Movie extends Product{
 
 //	private int year;
@@ -13,7 +15,7 @@ public class Movie extends Product{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Movie(ProductType type, String name, float price, int year, String genre, String director, int quantity, int numberOfFilms){
+	public Movie(ProductType type, String name, double price, int year, String genre, String director, int quantity, int numberOfFilms){
 		super(name, price, quantity, type, year);
 //		this.year = year;
 		this.genre = genre;
