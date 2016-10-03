@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * This class represent a order entity
+ */
 public class Order {
 //	jn319,2016/09/22 15:41:09,Pokemon Sun,1,The Shawshank Redemption,1,
 //	jn319,2016/09/22 15:42:18,The Shawshank Redemption,3,Call of Duty,2,

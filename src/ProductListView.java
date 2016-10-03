@@ -16,7 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
-
+/**
+ * This class is the main view for customer shopping.
+ */
 public class ProductListView extends View {
 	
 	private static final long serialVersionUID = 1L;

@@ -8,6 +8,9 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *This class is used as a view for admin to create a music product into system.
+ */
 public class AdminMusicDetails extends AdminProductDetails {
 
 	// music

@@ -18,6 +18,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+/**
+ * This class is worked when user opened the system and ask for log in/sign up
+ */
 public class LoginView extends View {
 
 	private static final long serialVersionUID = 1L;

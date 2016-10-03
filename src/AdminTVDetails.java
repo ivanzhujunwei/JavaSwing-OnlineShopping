@@ -7,6 +7,9 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *This class is used as a view for admin to create a TV series product into system.
+ */
 public class AdminTVDetails extends AdminProductDetails {
 
 	// TV

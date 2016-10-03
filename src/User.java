@@ -1,4 +1,9 @@
 
+/**
+ * 
+ * This class represents an user,who has many attributes stored in the system.Anyone who wants to use the system
+ * must be logged in as a user.
+ */
 public class User {
 
 	// customer id

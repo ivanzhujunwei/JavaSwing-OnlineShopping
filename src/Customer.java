@@ -9,6 +9,7 @@
  * This class represents a customer, it holds all of the data that the store needs to know about someone.
  * Whilst this information is not sufficient to place an order in real life, it is detailed enough to serve as a good learning example.
  * </pre>
+ * Customer is the main user of this shopping system. Customer is able to view all the products, save products into their own cart and place orders.
  */
 public class Customer extends User {
 

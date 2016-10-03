@@ -7,6 +7,9 @@ import javax.swing.JTextField;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.table.DefaultTableModel;
 
+/**
+ *This class is used as a view for admin to create a movie product into system.
+ */
 public class AdminMovieDetails extends AdminProductDetails{
 
 	// Movie
@@ -49,8 +52,8 @@ public class AdminMovieDetails extends AdminProductDetails{
 			String genre = this.getGenre().getText();
 			String director = this.getDirector().getText();
 			int numOfFilms = (int) this.getnumOfFilms().getValue();
-			// ProductType type, String name, float price, int year, String genre, String director, int quantity, int numOfFilms
-			return new Music(ProductType.MOVIE, p.getName(),p.getPrice(), p.getYear(), genre, director, p.getQuantity(), numOfFilms);
+			//ProductType type, String name, double price, int year, String genre, String director, int quantity, int numberOfFilms
+			return new Movie(ProductType.MOVIE, p.getName(),p.getPrice(), p.getYear(), genre, director, p.getQuantity(), numOfFilms);
 		}
 
 		public JTextField getGenre() {

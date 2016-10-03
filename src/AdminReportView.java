@@ -19,6 +19,10 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
+/**
+ * <pre>
+ * This class represents the view for admin to generate report
+ */
 public class AdminReportView extends View {
 
 	private static final long serialVersionUID = 1L;
